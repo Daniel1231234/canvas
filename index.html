@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>mister-canvas</title>
+</head>
+
+<body onload="init()">
+    <h1>Mister-canvas</h1>
+
+    <select class="shapes-btn" onchange="setShape(this.options[this.selectedIndex].value)">
+        <option value="">Choose Shape</option>
+        <option value="triangle">Triangle</option>
+        <option value="square">Square</option>
+        <option value="circle">Circle</option>
+    </select>
+
+    <input type="color" id="color" name="color" onchange="onChooseColor(this.value)" />
+
+    <button onclick="clearCanvas()">Clear</button>
+
+    <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download</a>
+
+    <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
+
+    <button class="btn" onclick="uploadImg()">
+        Upload Image from Canvas
+    </button>
+
+    <p class="user-msg"></p>
+    <div class="share-container"></div>
+
+    <div class="canvas-container">
+        <canvas width="500" height="500" onclick="draw(event)"></canvas>
+    </div>
+
+
+    <script src="js/service.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
